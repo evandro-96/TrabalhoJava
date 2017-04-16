@@ -5,8 +5,6 @@ import java.rmi.RemoteException;
 import java.util.List;
 import java.util.Map;
 
-import br.univel.client.Cliente;
-
 public interface IServer extends Remote {
 
 	public static final String NOME_SERVICO = "JShare";
