@@ -183,7 +183,7 @@ public class InterfacePrincipal extends JFrame implements IServer {
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
 		gbl_panel_1.columnWidths = new int[] { 0, 0, 0, 0, 75, 0, 0 };
 		gbl_panel_1.rowHeights = new int[] { 0, 0, 0, 0, 0, 0 };
-		gbl_panel_1.columnWeights = new double[] { 1.0, 1.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE };
+		gbl_panel_1.columnWeights = new double[] { 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, Double.MIN_VALUE };
 		gbl_panel_1.rowWeights = new double[] { 0.0, 0.0, 0.0, 1.0, 1.0, Double.MIN_VALUE };
 		panel_1.setLayout(gbl_panel_1);
 
@@ -274,6 +274,7 @@ public class InterfacePrincipal extends JFrame implements IServer {
 			}
 		});
 		GridBagConstraints gbc_btnProcurar = new GridBagConstraints();
+		gbc_btnProcurar.gridwidth = 2;
 		gbc_btnProcurar.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnProcurar.insets = new Insets(0, 0, 5, 5);
 		gbc_btnProcurar.gridx = 4;
