@@ -42,12 +42,12 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.TableModel;
 
-import br.univel.common.Arquivo;
-import br.univel.common.Cliente;
-import br.univel.common.IServer;
-import br.univel.common.Md5Util;
-import br.univel.common.MeuModelo;
-import br.univel.common.TipoFiltro;
+import br.univel.jshare.comum.Arquivo;
+import br.univel.jshare.comum.Cliente;
+import br.univel.jshare.comum.IServer;
+import br.univel.jshare.comum.Md5Util;
+import br.univel.jshare.comum.MeuModelo;
+import br.univel.jshare.comum.TipoFiltro;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -187,7 +187,7 @@ public class InterfacePrincipal extends JFrame implements IServer {
 		gbl_panel_1.rowWeights = new double[] { 0.0, 0.0, 0.0, 1.0, 1.0, Double.MIN_VALUE };
 		panel_1.setLayout(gbl_panel_1);
 
-		JLabel lblip = new JLabel("Endere\u00E7o");
+		JLabel lblip = new JLabel("Endereço");
 		GridBagConstraints gbc_lblip = new GridBagConstraints();
 		gbc_lblip.insets = new Insets(0, 0, 5, 5);
 		gbc_lblip.gridx = 0;
@@ -673,7 +673,7 @@ public class InterfacePrincipal extends JFrame implements IServer {
 		Path path = Paths.get(arq.getPath());
 		try {
 			dados = Files.readAllBytes(path);
-			fieldStatus.append("O usuário: " + cli.getNome() + " com o IP: " + cli.getIp() + " baixou o seu arquivo:"
+			fieldStatus.append("O usuário: " + cli.getNome()+ " com o IP: " + cli.getIp() + " baixou o seu arquivo:"
 					+ arq.getNome());
 			return dados;
 		} catch (IOException e) {

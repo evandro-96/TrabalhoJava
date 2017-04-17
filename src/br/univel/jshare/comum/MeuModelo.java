@@ -1,4 +1,4 @@
-package br.univel.common;
+package br.univel.jshare.comum;
 
 import java.util.List;
 import java.util.Map;
