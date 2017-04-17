@@ -184,7 +184,7 @@ public class InterfacePrincipal extends JFrame implements IServer {
 		gbl_panel_1.rowWeights = new double[] { 0.0, 0.0, 0.0, 1.0, 1.0, Double.MIN_VALUE };
 		panel_1.setLayout(gbl_panel_1);
 
-		JLabel lblip = new JLabel("IP");
+		JLabel lblip = new JLabel("Endere\u00E7o");
 		GridBagConstraints gbc_lblip = new GridBagConstraints();
 		gbc_lblip.insets = new Insets(0, 0, 5, 5);
 		gbc_lblip.gridx = 0;
