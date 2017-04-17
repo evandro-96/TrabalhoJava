@@ -281,20 +281,6 @@ public class InterfacePrincipal extends JFrame implements IServer {
 		gbc_btnProcurar.gridy = 1;
 		panel_1.add(btnProcurar, gbc_btnProcurar);
 
-		// btnUpar = new JButton("Upar");
-		// btnUpar.addActionListener(new ActionListener() {
-		// public void actionPerformed(ActionEvent arg0) {
-		// uparArquivos();
-		// }
-		// });
-		// btnUpar.setEnabled(false);
-		// GridBagConstraints gbc_btnUpar = new GridBagConstraints();
-		// gbc_btnUpar.fill = GridBagConstraints.HORIZONTAL;
-		// gbc_btnUpar.insets = new Insets(0, 0, 5, 0);
-		// gbc_btnUpar.gridx = 5;
-		// gbc_btnUpar.gridy = 1;
-		// panel_1.add(btnUpar, gbc_btnUpar);
-
 		lblTipofiltro = new JLabel("Filtrar por");
 		GridBagConstraints gbc_lblTipofiltro = new GridBagConstraints();
 		gbc_lblTipofiltro.fill = GridBagConstraints.VERTICAL;
@@ -382,11 +368,6 @@ public class InterfacePrincipal extends JFrame implements IServer {
 
 	}
 
-	/*
-	 * 
-	 * Metodos locais para Cliente
-	 * 
-	 */
 	public void uparArquivos() {
 
 		List<Arquivo> list = listarAquivosLocais();
@@ -467,10 +448,10 @@ public class InterfacePrincipal extends JFrame implements IServer {
 				String bytesBaixado = Md5Util.getMD5Checksum(a.getPath());
 				if (a.getMd5().equals(bytesBaixado)) {
 					fieldStatusCliente.append("Arquivo ìntegro baixado");
-					escreva(new File("cópia_de_" + a.getNome()), bytes);
+					escreva(new File("copia_de_" + a.getNome()), bytes);
 				} else {
 					fieldStatusCliente.append("Arquivo corrompido baixado");
-					escreva(new File("cópia_de_" + a.getNome()), bytes);
+					escreva(new File("copia_de_" + a.getNome()), bytes);
 				}
 			}
 
@@ -521,10 +502,10 @@ public class InterfacePrincipal extends JFrame implements IServer {
 			fieldStatusCliente.append("Conectado e registrado com sucesso\n");
 
 		} catch (Exception e) {
-			fieldStatusCliente.append("\n\n-------------------------------------------------------\n"
+			fieldStatusCliente.append("\n"
 					+ "ERRO: VERIFIQUE SE O SERVIDOR ESTÃO RODANDO, SE O IP E PORTA ESTÃO"
-					+ " CORRETOS, SE NÃO HÁ BLOQUEIO DE FIREWALL OU ANTIVIRUS.\n"
-					+ "-------------------------------------------------------------------\n\n");
+					+ " CORRETOS, SE NÃO HÁ BLOQUEIO DE FIREWALL OU ANTIVIRUS."
+					+ "\n");
 			fieldStatusCliente.append(e.toString());
 		}
 
@@ -556,6 +537,7 @@ public class InterfacePrincipal extends JFrame implements IServer {
 
 	}
 	
+	@SuppressWarnings("deprecation")
 	public void desconectar() {
 		try {
 			Cliente c = getClienteLocal();
@@ -573,11 +555,6 @@ public class InterfacePrincipal extends JFrame implements IServer {
 		}
 	}
 
-	/*
-	 * 
-	 * Metodos locais para servidor
-	 * 
-	 */
 	public void iniciaServico() {
 		try {
 			fieldStatus.append("Iniciando servidor\n");
@@ -606,12 +583,6 @@ public class InterfacePrincipal extends JFrame implements IServer {
 			e.printStackTrace();
 		}
 	}
-
-	/*
-	 * 
-	 * Metodos Interface para servidor
-	 * 
-	 */
 
 	@Override
 	public void registrarCliente(Cliente c) throws RemoteException {
