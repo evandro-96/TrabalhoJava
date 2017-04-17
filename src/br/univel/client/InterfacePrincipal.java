@@ -135,9 +135,9 @@ public class InterfacePrincipal extends JFrame implements IServer {
 		splitPane.setRightComponent(panel);
 		GridBagLayout gbl_panel = new GridBagLayout();
 		gbl_panel.columnWidths = new int[] { 0, 0, 0 };
-		gbl_panel.rowHeights = new int[] { 0, 0, 0, 0, 0 };
+		gbl_panel.rowHeights = new int[] { 0, 0, 0, 0, 0, 0 };
 		gbl_panel.columnWeights = new double[] { 0.0, 1.0, Double.MIN_VALUE };
-		gbl_panel.rowWeights = new double[] { 1.0, 1.0, 0.0, 1.0, Double.MIN_VALUE };
+		gbl_panel.rowWeights = new double[] { 0.0, 1.0, 1.0, 0.0, 1.0, Double.MIN_VALUE };
 		panel.setLayout(gbl_panel);
 		
 				btnIniciar = new JButton("Iniciar");
@@ -149,9 +149,8 @@ public class InterfacePrincipal extends JFrame implements IServer {
 				});
 				GridBagConstraints gbc_btnIniciar = new GridBagConstraints();
 				gbc_btnIniciar.fill = GridBagConstraints.BOTH;
-				gbc_btnIniciar.gridheight = 2;
-				gbc_btnIniciar.insets = new Insets(0, 0, 5, 5);
-				gbc_btnIniciar.gridx = 0;
+				gbc_btnIniciar.insets = new Insets(0, 0, 5, 0);
+				gbc_btnIniciar.gridx = 1;
 				gbc_btnIniciar.gridy = 0;
 				panel.add(btnIniciar, gbc_btnIniciar);
 
@@ -160,7 +159,7 @@ public class InterfacePrincipal extends JFrame implements IServer {
 		gbc_scrollPane_1.gridheight = 4;
 		gbc_scrollPane_1.fill = GridBagConstraints.BOTH;
 		gbc_scrollPane_1.gridx = 1;
-		gbc_scrollPane_1.gridy = 0;
+		gbc_scrollPane_1.gridy = 1;
 		panel.add(scrollPane_1, gbc_scrollPane_1);
 
 		fieldStatus = new JTextArea();
@@ -168,7 +167,7 @@ public class InterfacePrincipal extends JFrame implements IServer {
 		fieldStatus.setEditable(false);
 		
 				btnParar = new JButton("Parar");
-				scrollPane_1.setRowHeaderView(btnParar);
+				scrollPane_1.setColumnHeaderView(btnParar);
 				btnParar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						pararServico();
@@ -247,7 +246,7 @@ public class InterfacePrincipal extends JFrame implements IServer {
 		gbc_btnSair.gridy = 0;
 		panel_1.add(btnSair, gbc_btnSair);
 
-		JLabel lblQuery = new JLabel("Query");
+		JLabel lblQuery = new JLabel("Pesquisa");
 		GridBagConstraints gbc_lblQuery = new GridBagConstraints();
 		gbc_lblQuery.insets = new Insets(0, 0, 5, 5);
 		gbc_lblQuery.gridx = 0;
