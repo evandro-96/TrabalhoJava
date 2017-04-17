@@ -51,6 +51,7 @@ import br.univel.common.TipoFiltro;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Color;
 
 public class InterfacePrincipal extends JFrame implements IServer {
 
@@ -163,6 +164,8 @@ public class InterfacePrincipal extends JFrame implements IServer {
 		panel.add(scrollPane_1, gbc_scrollPane_1);
 
 		fieldStatus = new JTextArea();
+		fieldStatus.setBackground(Color.BLUE);
+		fieldStatus.setForeground(Color.WHITE);
 		scrollPane_1.setViewportView(fieldStatus);
 		fieldStatus.setEditable(false);
 		
@@ -300,7 +303,7 @@ public class InterfacePrincipal extends JFrame implements IServer {
 		panel_1.add(lblTipofiltro, gbc_lblTipofiltro);
 
 		comboTipoFiltro = new JComboBox<TipoFiltro>();
-		comboTipoFiltro.setModel(new DefaultComboBoxModel<TipoFiltro>(TipoFiltro.values()));
+		comboTipoFiltro.setModel(new DefaultComboBoxModel(TipoFiltro.values()));
 		GridBagConstraints gbc_comboTipoFiltro = new GridBagConstraints();
 		gbc_comboTipoFiltro.insets = new Insets(0, 0, 5, 5);
 		gbc_comboTipoFiltro.fill = GridBagConstraints.HORIZONTAL;
